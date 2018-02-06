@@ -1,0 +1,29 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#409EFF",
+    "navigationBarTitleText": "星韵通",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+    "backgroundColor": "#ffffff",
+    "color": "#909399",
+    "selectedColor": "#409EFF",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/tabbar_home_grey.png",
+      "selectedIconPath": "images/tabbar_home_blue.png"
+    },{
+      "pagePath": "pages/personal/personal",
+      "iconPath": "images/tabbar_user_grey.png",
+      "selectedIconPath":"images/tabbar_user_blue.png",
+      "text": "我的"
+    }]
+  }
+}

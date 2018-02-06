@@ -1,0 +1,56 @@
+/**app.wxss**/
+page{
+	color: #303133;
+}
+
+/*----------背景颜色--------*/
+.bg_blue{
+	background-color: #409EFF;
+}
+
+/*----------字体大小--------*/
+.font_38{
+	font-size: 38rpx;
+	line-height: 38rpx;
+}
+.font_36{
+	font-size: 36rpx;
+	line-height: 36rpx;
+}
+.font_30{
+	font-size: 30rpx;
+	line-height: 30rpx;
+}
+.font_24{
+	font-size: 24rpx;
+	line-height: 24rpx;
+}
+.font_20{
+	font-size: 20rpx;
+	line-height: 20rpx;
+}
+.font_bold{
+	font-weight: bold;
+}
+/*----------字体颜色--------*/
+.common_color{
+	color: #606266;
+}
+.grey_color{
+	color: #909399;
+}
+.white_color{
+	color: #ffffff;
+}
+.primary_color{
+	color: #409EFF;
+}
+.success_color{
+	color: #67C23A;
+}
+.warning_color{
+	color: #E6A23C;
+}
+.danger_color{
+	color:#F56C6C;
+}
