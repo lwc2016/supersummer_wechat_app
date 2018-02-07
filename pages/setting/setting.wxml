@@ -1,0 +1,16 @@
+<view>
+	<view class="section">
+		<view bindtap="handleClearStorage" class="item">
+			<view class="item-left">
+				<image class="item-icon" src="../../images/qingli_icon.png"></image>
+				<text class="font_30 common_color">已占用空间</text>
+			</view>
+			<view class="item-right">
+				<text class="font_30 common_color">{{currentSize}}kb</text>
+				<image class="arrow-icon" src="../../images/arrow_grey_icon.png"></image>
+			</view>
+		</view>
+	</view>
+
+	<view bindtap="handleLogout" class="logout-btn font_30 common_color">退出登录</view>
+</view>

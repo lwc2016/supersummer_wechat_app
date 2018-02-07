@@ -1,0 +1,27 @@
+page{
+	background-color: #f5f5f5;
+}
+
+.list{
+	background-color: #ffffff;
+	padding-left: 30rpx;
+}
+.list .item{
+	height: 90rpx;
+	padding-right: 30rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.list .item + .item{
+	border-top: 1rpx solid #EBEEF5;
+}
+.list .arrow-icon{
+	width: 18rpx;
+	height: 31rpx;
+	margin-left: 10rpx;
+}
+.list .item-right{
+	display: flex;
+	align-items: center;
+}

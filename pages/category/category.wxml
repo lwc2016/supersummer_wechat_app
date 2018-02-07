@@ -1,0 +1,11 @@
+<view>
+	<view class="list">
+		<view wx:for="{{list}}" wx:key="{{item.id}}" class="item">
+			<text class="font_30 common_color">{{item.name}}</text>
+			<view class="item-right">
+				<text class="font_30 common_color">{{item.question_count || 0}}题</text>
+				<image class="arrow-icon" src="../../images/arrow_grey_icon.png"></image>
+			</view>
+		</view>
+	</view>
+</view>

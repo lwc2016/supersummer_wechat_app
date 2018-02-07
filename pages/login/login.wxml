@@ -1,0 +1,21 @@
+<view>
+    <view class="form">
+        <view class="form-group">
+        	<image class="item-icon" src="../../images/phone_blue_icon.png"></image>
+            <input class="font_30" placeholder="手机号" />
+            <image class="status-icon" src="../../images/success_icon.png"></image>
+        </view>
+        <view class="form-group">
+        	<image class="item-icon" src="../../images/password_icon.png"></image>
+            <input class="font_30" placeholder="密码" />
+            <image class="status-icon" src="../../images/error_icon.png"></image>
+        </view>
+        <view wx:if="{{!isLogin}}" class="form-group">
+        	<image class="item-icon" src="../../images/password_icon.png"></image>
+            <input class="font_30" placeholder="确认密码" />
+            <image class="status-icon" src="../../images/error_icon.png"></image>
+        </view>
+    </view>
+    <view class="btn font_30 white_color">{{isLogin ? "登录": "注册"}}</view>
+    <view class="footer font_30 grey_color">{{isLogin ? "还未注册账户": "已经注册账号"}}，<text bindtap="handleChange" class="click-btn blue_color primary_color font_bold">{{isLogin ? "切换注册" : "切换登录"}}</text></view>
+</view>

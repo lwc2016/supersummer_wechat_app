@@ -1,0 +1,62 @@
+<view>
+    <view data-value="kuaiji" data-name="会计" bindtap="handleSelected" class="section {{subject == 'kuaiji' ? 'selected': ''}}">
+        <view class="select-left">
+            <image class="subject-logo" src="../../images/kuaiji_logo.png"></image>
+            <view class="font_38 common_color">会计</view>
+        </view>
+        <image 
+            class="select-icon" 
+            src="{{subject == 'kuaiji' ? '../../images/selected_icon.png': '../../images/select_icon.png'}}"
+        ></image>
+    </view>
+    <view data-value="shuifa" data-name="税法" bindtap="handleSelected" class="section {{subject == 'shuifa' ? 'selected': ''}}">
+        <view class="select-left">
+            <image class="subject-logo" src="../../images/shuifa_icon.png"></image>
+            <view class="font_38 common_color">税法</view>
+        </view>
+        <image 
+            class="select-icon" 
+            src="{{subject == 'shuifa' ? '../../images/selected_icon.png': '../../images/select_icon.png'}}"
+        ></image>
+    </view>
+    <view data-value="jingji" data-name="经济法" bindtap="handleSelected" class="section {{subject == 'jingji' ? 'selected': ''}}">
+        <view class="select-left">
+            <image class="subject-logo" src="../../images/jingji_icon.png"></image>
+            <view class="font_38 common_color">经济法</view>
+        </view>
+        <image 
+            class="select-icon"
+            src="{{subject == 'jingji' ? '../../images/selected_icon.png': '../../images/select_icon.png'}}"
+        ></image>
+    </view>
+    <view data-value="shenji" data-name="审计" bindtap="handleSelected" class="section {{subject == 'shenji' ? 'selected': ''}}">
+        <view class="select-left">
+            <image class="subject-logo" src="../../images/shenji_icon.png"></image>
+            <view class="font_38 common_color">审计</view>
+        </view>
+        <image 
+            class="select-icon" 
+            src="{{subject == 'shenji' ? '../../images/selected_icon.png': '../../images/select_icon.png'}}"
+        ></image>
+    </view>
+    <view data-value="caiwu" data-name="财务管理" bindtap="handleSelected" class="section {{subject == 'caiwu' ? 'selected': ''}}">
+        <view class="select-left">
+            <image class="subject-logo" src="../../images/caiwu_icon.png"></image>
+            <view class="font_38 common_color">财务管理</view>
+        </view>
+        <image 
+            class="select-icon" 
+            src="{{subject == 'caiwu' ? '../../images/selected_icon.png': '../../images/select_icon.png'}}"
+        ></image>
+    </view>
+    <view data-value="fengkong" data-name="公司成本与风险管理" bindtap="handleSelected" class="section {{subject == 'fengkong' ? 'selected': ''}}">
+        <view class="select-left">
+            <image class="subject-logo" src="../../images/fengkong_icon.png"></image>
+            <view class="font_38 common_color">公司成本与风险管理</view>
+        </view>
+        <image 
+            class="select-icon" 
+            src="{{subject == 'fengkong' ? '../../images/selected_icon.png': '../../images/select_icon.png'}}"
+        ></image>
+    </view>
+</view>

@@ -1,4 +1,5 @@
 <view>
+	<!-- 头部区域开始 -->
 	<view class="header bg_blue">
 		<view wx:if="{{isLogined}}" class="has_logined">
 			<image class="logo" src="../../images/default_user_logo.png"></image>
@@ -10,14 +11,16 @@
 				</view>
 			</view>
 		</view>
-		<view wx:if="{{!isLogined}}" class="not_logined">
+		<navigator url="../login/login" wx:if="{{!isLogined}}" hover-class="none" class="not_logined">
 			<view>
 				<view class="font_38 white_color login-text">登录/注册</view>
 				<view class="font_24 white_color">登录后可享受更多特权</view>
 			</view>
 			<image class="arrow_icon" src="../../images/arrow_white_icon.png"></image>
-		</view>
+		</navigator>
 	</view>
+	<!-- 头部区域结束 -->
+	<!-- 导航区域开始 -->
 	<view class="navbar">
 		<view class="nav-item">
 			<view class="font_36 primary_color">0<text class="font_24">道</text></view>
@@ -36,4 +39,27 @@
 			<view class="font_24 common_color nav-title">已考过</view>
 		</view>
 	</view>
+	<!-- 导航区域结束 -->
+
+	<view class="section">
+		<navigator url="../subject/subject" hover-class="none" class="section_item">
+			<view class="item_left">
+				<image class="item_icon" src="../../images/kemu_icon.png"></image>
+				<text class="font_30 common_color">科目</text>
+			</view>
+			<view class="item_right">
+				<text wx:if="{{!subjectName}}" class="font_30 grey_color">请选择</text>
+				<text wx:if="{{subjectName}}" class="font_30 common_color">{{subjectName}}</text>
+				<image class="arrow_icon" src="../../images/arrow_grey_icon.png"></image>
+			</view>
+		</navigator>
+		<navigator url="../setting/setting" hover-class="none" class="section_item">
+			<view class="item_left">
+				<image class="item_icon" src="../../images/setting_icon.png"></image>
+				<text class="font_30 common_color">设置</text>
+			</view>
+			<image class="arrow_icon" src="../../images/arrow_grey_icon.png"></image>
+		</navigator>
+	</view>
+
 </view>

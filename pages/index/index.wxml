@@ -1,49 +1,28 @@
-<!--index.wxml-->
 <view>
-    <view class="font_30 common_color title">考试科目</view>
-    <view class="navbar">
-        <view class="item">
-            <image class="nav_icon" src="../../images/kuaiji_logo.png"></image>
-            <view class="font_24 common_color">会计</view>
-        </view>
-        <view class="item">
-            <image class="nav_icon" src="../../images/shuifa_icon.png"></image>
-            <view class="font_24 common_color">税法</view>
-        </view>
-        <view class="item">
-            <image class="nav_icon" src="../../images/shenji_icon.png"></image>
-            <view class="font_24 common_color">审计</view>
-        </view>
-        <view class="item">
-            <image class="nav_icon" src="../../images/jingji_icon.png"></image>
-            <view class="font_24 common_color">经济法</view>
-        </view>
-        <view class="item">
-            <image class="nav_icon" src="../../images/fengkong_icon.png"></image>
-            <view class="font_24 common_color">战略与风险管理</view>
-        </view>
-        <view class="item">
-            <image class="nav_icon" src="../../images/caiwu_icon.png"></image>
-            <view class="font_24 common_color">财务成本管理</view>
-        </view>
-    </view>
-    <view class="font_30 common_color title">答题考试</view>
-    <view class="navbar">
-        <view class="item2">
-            <image class="nav_icon" src="../../images/ziyou_icon.png"></image>
-            <view class="font_24 common_color">自由答题</view>
-        </view>
-        <view class="item2">
-            <image class="nav_icon" src="../../images/fenlei_icon.png"></image>
-            <view class="font_24 common_color">分类答题</view>
-        </view>
-        <view class="item2">
-            <image class="nav_icon" src="../../images/kaoshi_logo.png"></image>
-            <view class="font_24 common_color">自由模拟考试</view>
-        </view>
-        <view class="item2">
-            <image class="nav_icon" src="../../images/xianshi_icon.png"></image>
-            <view class="font_24 common_color">限时模拟考试</view>
-        </view>
-    </view>
+	<view class="navbar">
+		<view class="nav-item">
+			<image class="nav-logo" src="../../images/ziyou_icon.png"></image>
+			<view class="font_30 grey_color">自由答题</view>
+		</view>
+		<view data-url="../category/category" bindtap="handleSelected" class="nav-item">
+			<image class="nav-logo" src="../../images/fenlei_icon.png"></image>
+			<view class="font_30 grey_color">分类答题</view>
+		</view>
+		<view class="nav-item">
+			<image class="nav-logo" src="../../images/chuangguan_icon.png"></image>
+			<view class="font_30 grey_color">闯关答题</view>
+		</view>
+		<view class="nav-item">
+			<image class="nav-logo" src="../../images/kaoshi_logo.png"></image>
+			<view class="font_30 grey_color">自由模拟考试</view>
+		</view>
+		<view class="nav-item">
+			<image class="nav-logo" src="../../images/xianshi_icon.png"></image>
+			<view class="font_30 grey_color">限时模拟考试</view>
+		</view>
+		<view class="nav-item">
+			<image class="nav-logo" src="../../images/meiri_icon.png"></image>
+			<view class="font_30 grey_color">开心每天</view>
+		</view>
+	</view>
 </view>

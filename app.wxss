@@ -19,7 +19,6 @@ page{
 }
 .font_30{
 	font-size: 30rpx;
-	line-height: 30rpx;
 }
 .font_24{
 	font-size: 24rpx;
