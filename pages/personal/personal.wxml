@@ -1,65 +1,72 @@
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
 <view>
-	<!-- 头部区域开始 -->
-	<view class="header bg_blue">
-		<view wx:if="{{isLogined}}" class="has_logined">
-			<image class="logo" src="../../images/default_user_logo.png"></image>
-			<view class="user_info">
-				<view class="font_36 white_color font_bold">刘文超</view>
-				<view class="phone">
-					<image class="phone_icon" src="../../images/phone_icon.png"></image>
-					<text class="font_24 white_color">18058742793</text>
-				</view>
-			</view>
-		</view>
-		<navigator url="../login/login" wx:if="{{!isLogined}}" hover-class="none" class="not_logined">
-			<view>
-				<view class="font_38 white_color login-text">登录/注册</view>
-				<view class="font_24 white_color">登录后可享受更多特权</view>
-			</view>
-			<image class="arrow_icon" src="../../images/arrow_white_icon.png"></image>
-		</navigator>
-	</view>
-	<!-- 头部区域结束 -->
-	<!-- 导航区域开始 -->
-	<view class="navbar">
-		<view class="nav-item">
-			<view class="font_36 primary_color">0<text class="font_24">道</text></view>
-			<view class="font_24 common_color nav-title">已答过</view>
-		</view>
-		<view class="nav-item">
-			<view class="font_36 danger_color">0<text class="font_24">道</text></view>
-			<view class="font_24 common_color nav-title">已错题</view>
-		</view>
-		<view class="nav-item">
-			<view class="font_36 warning_color">0<text class="font_24">道</text></view>
-			<view class="font_24 common_color nav-title">已收藏</view>
-		</view>
-		<view class="nav-item">
-			<view class="font_36 success_color">0<text class="font_24">套</text></view>
-			<view class="font_24 common_color nav-title">已考过</view>
-		</view>
-	</view>
-	<!-- 导航区域结束 -->
-
-	<view class="section">
-		<navigator url="../subject/subject" hover-class="none" class="section_item">
-			<view class="item_left">
-				<image class="item_icon" src="../../images/kemu_icon.png"></image>
-				<text class="font_30 common_color">科目</text>
-			</view>
-			<view class="item_right">
-				<text wx:if="{{!subjectName}}" class="font_30 grey_color">请选择</text>
-				<text wx:if="{{subjectName}}" class="font_30 common_color">{{subjectName}}</text>
-				<image class="arrow_icon" src="../../images/arrow_grey_icon.png"></image>
-			</view>
-		</navigator>
-		<navigator url="../setting/setting" hover-class="none" class="section_item">
-			<view class="item_left">
-				<image class="item_icon" src="../../images/setting_icon.png"></image>
-				<text class="font_30 common_color">设置</text>
-			</view>
-			<image class="arrow_icon" src="../../images/arrow_grey_icon.png"></image>
-		</navigator>
-	</view>
-
+    <!-- 头部区域开始 -->
+    <view class="header bg_blue">
+        <view wx:if="{{user.phone}}" class="has_logined">
+            <image class="logo" src="{{wxUserInfo.avatarUrl || '../../images/default_user_logo.png'}}"></image>
+            <view class="user_info">
+                <view class="font_36 white_color font_bold">{{wxUserInfo.nickName}}</view>
+                <view class="phone">
+                    <image class="phone_icon" src="../../images/phone_icon.png"></image>
+                    <text class="font_24 white_color">{{user.phone}}</text>
+                </view>
+            </view>
+        </view>
+        <navigator url="../login/login" wx:if="{{!user.phone}}" hover-class="none" class="not_logined">
+            <view>
+                <view class="font_38 white_color login-text">登录/注册</view>
+                <view class="font_24 white_color">登录后可享受更多特权</view>
+            </view>
+            <image class="arrow_icon" src="../../images/arrow_white_icon.png"></image>
+        </navigator>
+    </view>
+    <!-- 头部区域结束 -->
+    <!-- 导航区域开始 -->
+    <view class="navbar">
+        <view class="nav-item">
+            <view class="font_36 primary_color">0
+                <text class="font_24">道</text>
+            </view>
+            <view class="font_24 common_color nav-title">已答过</view>
+        </view>
+        <view class="nav-item">
+            <view class="font_36 danger_color">0
+                <text class="font_24">道</text>
+            </view>
+            <view class="font_24 common_color nav-title">已错题</view>
+        </view>
+        <view class="nav-item">
+            <view class="font_36 warning_color">0
+                <text class="font_24">道</text>
+            </view>
+            <view class="font_24 common_color nav-title">已收藏</view>
+        </view>
+        <view class="nav-item">
+            <view class="font_36 success_color">0
+                <text class="font_24">套</text>
+            </view>
+            <view class="font_24 common_color nav-title">已考过</view>
+        </view>
+    </view>
+    <!-- 导航区域结束 -->
+    <view class="section">
+        <navigator url="../subject/subject" hover-class="none" class="section_item">
+            <view class="item_left">
+                <image class="item_icon" src="../../images/kemu_icon.png"></image>
+                <text class="font_30 common_color">科目</text>
+            </view>
+            <view class="item_right">
+                <text wx:if="{{!subject}}" class="font_30 grey_color">请选择</text>
+                <text wx:if="{{subject}}" class="font_30 common_color">{{filter.formatSubject(subject)}}</text>
+                <image class="arrow_icon" src="../../images/arrow_grey_icon.png"></image>
+            </view>
+        </navigator>
+        <navigator url="../setting/setting" hover-class="none" class="section_item">
+            <view class="item_left">
+                <image class="item_icon" src="../../images/setting_icon.png"></image>
+                <text class="font_30 common_color">设置</text>
+            </view>
+            <image class="arrow_icon" src="../../images/arrow_grey_icon.png"></image>
+        </navigator>
+    </view>
 </view>

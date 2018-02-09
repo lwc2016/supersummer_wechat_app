@@ -1,9 +1,10 @@
 {
   "pages":[
+    "pages/questionDetail/questionDetail",
     "pages/index/index",
+    "pages/personal/personal",
     "pages/login/login",
     "pages/setting/setting",
-    "pages/personal/personal",
     "pages/category/category",
     "pages/subject/subject"
   ],

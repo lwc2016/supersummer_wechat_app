@@ -20,6 +20,14 @@ page{
 .font_30{
 	font-size: 30rpx;
 }
+.font_28{
+	font-size: 28rpx;
+	line-height: 28rpx;
+}
+.font_26{
+	font-size: 26rpx;
+	line-height: 26rpx;
+}
 .font_24{
 	font-size: 24rpx;
 	line-height: 24rpx;

@@ -21,7 +21,6 @@ class Storage {
         });
     }
     static get() {
-    	console.log("-------get--------");
         return new Promise((resolve, reject) => {
             wx.getStorage({
                 key: this.key,
@@ -52,3 +51,44 @@ export class SubjectStorage extends Storage{
 	}
 };
 SubjectStorage.key = "subject";
+/*----------储存登录信息-----------*/
+export class AuthStorage extends Storage{
+    constructor(value){
+        super();
+        this.key = "auth";
+        this.value = value;
+    }
+};
+AuthStorage.key = "auth";
+/*----------储存用户信息----------*/
+export class UserStorage extends Storage{
+    constructor(value){
+        super();
+        this.key = "user";
+        this.value = value;
+        this.expiredTime = 24 * 60 * 60 * 1000;
+    }
+};
+UserStorage.key = "user";
+/*---------储存分类---------*/
+export class CategoryStorage extends Storage{
+    constructor(value){
+        super();
+        this.key = "category";
+        this.value = value;
+        this.expiredTime = 24 * 60 * 60 * 1000;
+    }
+};
+CategoryStorage.key = "category";
+/*--------储存微信用户信息------*/
+export class WxUserInfoStorage extends Storage{
+    constructor(value){
+        super();
+        this.key = "wxUserInfo";
+        this.value = value;
+        this.expiredTime = 24 * 60 * 60 * 1000;
+    }
+};
+WxUserInfoStorage.key = "wxUserInfo";
+
+

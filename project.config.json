@@ -10,7 +10,7 @@
 	"compileType": "",
 	"libVersion": "1.9.1",
 	"projectname": "supersummer_wechat_app",
-	"appid": "wxb5346ef83e1e275c",
+	"appid": "touristappid",
 	"condition": {
 		"search": {
 			"current": -1,

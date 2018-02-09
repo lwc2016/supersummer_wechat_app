@@ -1,24 +1,51 @@
 /*-------导入存储模块--------*/
-import { SubjectStorage } from "../../utils/storage.js";
-/*-------导入过滤器----------*/
-import { formatSubject } from "../../utils/filter.js";
+import { SubjectStorage, UserStorage } from "../../utils/storage.js";
+/*-------导入网络请求模块------*/
+import { user_info } from "../../utils/api.js";
+const app = getApp();
 Page({
     data: {
         isLogined: false,
-        subjectName: ""
+        subject: "",
+        user: {},
+        wxUserInfo: {}
     },
     onLoad: function() {
-        console.log("-------personal onLoad--------");
+        let wxUserInfo = app.globalData.userInfo;
+        this.setData({wxUserInfo});
     },
     onShow: function() {
-        console.log("-------personal onShow-------");
         this.getSubject();
+        this.getUserStorage();
     },
     /*-------获取科目-------*/
     getSubject: function() {
         SubjectStorage.get().then(data => {
-        	let subjectName = formatSubject(data);
-            this.setData({subjectName});
+            let subject = data;
+            this.setData({ subject });
+        });
+    },
+    demo: function() {
+        return "ok";
+    },
+    /*-------获取用户信息-----*/
+    getUserInfo: function() {
+        user_info().then(data => {
+            if (data.code == "0") {
+                let userStorage = new UserStorage(data.result);
+                userStorage.set().then(() => {
+                    this.setData({ user: data.result });
+                });
+            };
+        });
+    },
+    getUserStorage: function() {
+        UserStorage.get().then(data => {
+            if (data) {
+                this.setData({ user: data });
+            } else {
+                this.getUserInfo();
+            }
         });
     }
 });

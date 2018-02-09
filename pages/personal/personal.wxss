@@ -16,6 +16,7 @@ page{
 	width: 120rpx;
 	height: 120rpx;
 	margin-right: 40rpx;
+	border-radius: 100%;
 }
 .header .user_info{
 	height: 80rpx;

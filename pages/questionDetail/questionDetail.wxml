@@ -1,0 +1,63 @@
+<wxs src="../../utils/filter.wxs" module="filter" ></wxs>
+<view>
+    <!-- 头部开始 -->
+    <view class="header">
+        <view class="font_30 common_color">{{question.category_name}}</view>
+        <view></view>
+    </view>
+    <!-- 头部结束 -->
+    <!-- 题目标题开始 -->
+    <view class="title font_26">
+        <text class="primary_color question_type">( {{filter.formatQuestionType(question.type)}} )</text>
+        <text>{{question.content}}</text>
+    </view>
+    <!-- 题目标题结束 -->
+    <!-- 题目选项开始 -->
+    <view class="options font_26">
+        <view wx:for="{{question.options}}" wx:key="{{index}}" class="option">
+            <view data-value="{{item.label}}" bindtap="handleSelectAnswer" class="label {{question.type == 'single' ? 'label-single': 'label-double'}} {{filter.isInArray(item.label, answerSelected) ? 'label-active' : ''}}">{{item.label}}</view>
+            <view class="option-content">{{item.content}}</view>
+        </view>
+    </view>
+    <!-- 题目选项结束 -->
+    <view class="btn-group">
+        <view bindtap="handleSubmit" class="btn bg_blue font_28 white_color">提交答案</view>
+    </view>
+    <!-- 答案解析开始 -->
+    <view wx:if="{{answer.right_answer}}" class="resolve">
+        <view class="resolve-title font_26">
+            <view class="title-item">很遗憾，这道题你答错了</view>
+            <view class="title-item">您的答案是：</view>
+            <view class="title-item">正确答案是：
+                <text class="danger_color">C</text>
+            </view>
+        </view>
+        <view class="resolve-content font_26">
+            【答案解析】本题考查知识点：长期股权投资后续计量方法辨析； 对被投资单位能够实施控制的情况下应采用成本法进行后续计量。 选项B，应作为金融资产核算； 选项C，能够对B公司产生重大影响，应作为长期股权投资并采用权益法核算。
+        </view>
+    </view>
+    <!-- 答案解析结束 -->
+    <view class="hidden"></view>
+    <!-- 底部开始 -->
+    <view class="footer">
+        <view bindtap="handleOpenModal" class="footer-left">
+            <image class="fankui-icon" src="../../images/fankui_blue_icon.png"></image>
+            <text class="font_26 primary_color">学习反馈</text>
+        </view>
+        <view class="footer-right bg_blue font_28 white_color">进入下一题</view>
+    </view>
+    <!-- 底部结束 -->
+    <view wx:if="{{isModal}}" bindtap="handleCloseModal" class="modal">
+        <view catchtap="handleClickModalContent"  class="modal-content">
+            <view class="modal-title font_36 common_color">学习反馈</view>
+            <view class="modal-body">
+                <view data-value="1" catchtap="handleSelectedEffect" class="section-item font_26 grey_color {{effect == 1 ? 'section-item-active': ''}}">完全不懂</view>
+                <view data-value="2" catchtap="handleSelectedEffect" class="section-item font_26 grey_color {{effect == 2 ? 'section-item-active': ''}}">模棱两可</view>
+                <view data-value="3" catchtap="handleSelectedEffect" class="section-item font_26 grey_color {{effect == 3 ? 'section-item-active': ''}}">完全明白</view>
+            </view>
+            <view class="modal-footer">
+                <view catchtap="handleConfirmEffect" class="font_28 bg_blue white_color footer_btn">选好了</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -7,8 +7,28 @@ export const modal = (content, callback) => {
         confirmText: "确认",
         cancelColor: "#909399",
         confirmColor: "#409EFF",
-        success: (res)=>{
-			if(res.confirm) callback && callback();
+        success: (res) => {
+            if (res.confirm) callback && callback();
         }
     })
+};
+export const toast = (title) => {
+    wx.showToast({
+        title: title,
+        icon: "success",
+        duration: 2000
+    })
+};
+export const wxUserInfo = () => {
+    return new Promise((resolve, reject) => {
+        wx.getUserInfo({
+            lang: "en",
+            success: (res)=>{
+                resolve(res.userInfo);
+            },
+            fail: (err)=>{
+                reject(err);
+            }
+        })
+    });
 };

@@ -1,6 +1,6 @@
 <view>
 	<view class="navbar">
-		<view class="nav-item">
+		<view data-url="../questionDetail/questionDetail" bindtap="handleSelected" class="nav-item">
 			<image class="nav-logo" src="../../images/ziyou_icon.png"></image>
 			<view class="font_30 grey_color">自由答题</view>
 		</view>
