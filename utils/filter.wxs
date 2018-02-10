@@ -26,6 +26,7 @@ function formatQuestionType(type){
             return "多选题";
     }
 };
+/*-------判断元素是否在数组里-----------*/
 function isInArray(key, arr){
     if(arr.indexOf(key) >= 0){
         return true;
@@ -33,8 +34,13 @@ function isInArray(key, arr){
         return false;
     };
 };
+/*-------格式化选项-------------*/
+function formatAnswers(answers){
+    return answers.join(",");
+}
 module.exports = {
     formatSubject: formatSubject,
     formatQuestionType: formatQuestionType,
-    isInArray: isInArray
+    isInArray: isInArray,
+    formatAnswers: formatAnswers
 };

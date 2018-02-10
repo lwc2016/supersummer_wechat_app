@@ -36,8 +36,10 @@ Page({
 		});
 	},
 	handleSelectAnswer(e){
+		/*---------已经答过的题目不能修改---------*/
+		if(this.data.answer.id) return;
+
 		let value = e.currentTarget.dataset.value;
-		console.log(value);
 		let answerSelected = this.data.answerSelected;
 		if(this.data.question.type == "single"){
 			answerSelected[0] = value;

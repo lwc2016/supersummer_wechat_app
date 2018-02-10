@@ -20,16 +20,16 @@
         </view>
     </view>
     <!-- 题目选项结束 -->
-    <view class="btn-group">
+    <view wx:if="{{!answer.id}}" class="btn-group">
         <view bindtap="handleSubmit" class="btn bg_blue font_28 white_color">提交答案</view>
     </view>
     <!-- 答案解析开始 -->
     <view wx:if="{{answer.right_answer}}" class="resolve">
         <view class="resolve-title font_26">
-            <view class="title-item">很遗憾，这道题你答错了</view>
-            <view class="title-item">您的答案是：</view>
+            <view class="title-item">{{answer.is_right ? '太棒了，这道题你答对了': '很遗憾，这道题你答错了'}}</view>
+            <view class="title-item">您的答案是：{{answer.user_answer}}</view>
             <view class="title-item">正确答案是：
-                <text class="danger_color">C</text>
+                <text class="danger_color">{{answer.right_answer}}</text>
             </view>
         </view>
         <view class="resolve-content font_26">
